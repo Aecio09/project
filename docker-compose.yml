@@ -1,0 +1,55 @@
+services:
+  mysql:
+    image: mysql:8.0
+    container_name: project-mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: rootpassword
+      MYSQL_DATABASE: projectdb
+      MYSQL_USER: projectuser
+      MYSQL_PASSWORD: projectpass
+    ports:
+      - "3306:3306"
+    volumes:
+      - mysql_data:/var/lib/mysql
+    networks:
+      - project-network
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  backend:
+    build:
+      context: ./backend/03
+      dockerfile: Dockerfile
+    container_name: project-backend
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:mysql://mysql:3306/projectdb
+      SPRING_DATASOURCE_USERNAME: projectuser
+      SPRING_DATASOURCE_PASSWORD: projectpass
+      SPRING_JPA_HIBERNATE_DDL_AUTO: update
+    ports:
+      - "8080:8080"
+    depends_on:
+      mysql:
+        condition: service_healthy
+    networks:
+      - project-network
+
+  code-executor:
+    build:
+      context: ./code-executor
+      dockerfile: Dockerfile
+    container_name: project-code-executor
+    ports:
+      - "3000:3000"
+    networks:
+      - project-network
+
+networks:
+  project-network:
+    driver: bridge
+
+volumes:
+  mysql_data:
