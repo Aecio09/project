@@ -5,19 +5,19 @@ services:
     environment:
       MYSQL_ROOT_PASSWORD: rootpassword
       MYSQL_DATABASE: projectdb
-      MYSQL_USER: projectuser
-      MYSQL_PASSWORD: projectpass
     ports:
-      - "3306:3306"
+      - "3307:3306"
     volumes:
       - mysql_data:/var/lib/mysql
+      - ./backend/03/docker-init:/docker-entrypoint-initdb.d
     networks:
       - project-network
     healthcheck:
-      test: ["CMD", "mysqladmin", "ping", "-h", "localhost"]
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost", "-u", "root", "-prootpassword"]
       interval: 10s
       timeout: 5s
-      retries: 5
+      retries: 10
+      start_period: 40s
 
   backend:
     build:
@@ -36,6 +36,7 @@ services:
         condition: service_healthy
     networks:
       - project-network
+    restart: on-failure
 
   code-executor:
     build:
