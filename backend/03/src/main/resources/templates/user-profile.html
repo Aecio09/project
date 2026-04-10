@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="pt-BR" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Perfil</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        body {
+            height: 100vh;
+            background-color: #f1f3f4;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .profile-card {
+            background: #ffffff;
+            width: 360px;
+            padding: 30px 25px;
+            border-radius: 12px;
+            text-align: center;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+            animation: fadeIn 0.4s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(15px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .profile-image {
+            width: 110px;
+            height: 110px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid #e8f0fe;
+            margin-bottom: 15px;
+        }
+
+        .profile-name {
+            font-size: 20px;
+            font-weight: 600;
+            color: #202124;
+            margin-bottom: 5px;
+        }
+
+        .profile-email {
+            font-size: 14px;
+            color: #5f6368;
+            margin-bottom: 20px;
+        }
+
+        .divider {
+            height: 1px;
+            background: #e0e0e0;
+            margin: 20px 0;
+        }
+
+        .btn-logout {
+            width: 100%;
+            padding: 10px;
+            border: none;
+            border-radius: 6px;
+            background-color: #1a73e8;
+            color: #fff;
+            font-size: 14px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .btn-logout:hover {
+            background-color: #1669c1;
+        }
+
+        .btn-logout:active {
+            background-color: #1257a6;
+            transform: scale(0.98);
+        }
+
+        .btn-logout:focus {
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(26,115,232,0.3);
+        }
+
+        .btn-logout:disabled {
+            background-color: #9aa0a6;
+            cursor: not-allowed;
+        }
+    </style>
+</head>
+<body>
+
+<div class="profile-card">
+
+
+    <img
+            th:src="${photo}"
+            alt="Foto do usuário"
+            class="profile-image"
+    >
+
+
+    <div class="profile-name" th:text="${name}">
+        Nome do usuário
+    </div>
+
+
+    <div class="profile-email" th:text="${email}">
+        email@email.com
+    </div>
+
+    <div class="divider"></div>
+
+
+    <form th:action="@{/logout}" method="post">
+        <button class="btn-logout" type="submit">
+            Sair da conta
+        </button>
+    </form>
+
+</div>
+
+</body>
+</html>
