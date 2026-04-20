@@ -33,7 +33,7 @@ public class Question {
     private Topics topic;
 
 
-    // ESPACO ENTRE ENTIDADE E ENUM PQ ME DA AGONIA ESTAR MUITO PERTO
+
 
 
     public enum QuestionType {
