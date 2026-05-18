@@ -54,4 +54,16 @@ public class QuestionService {
     public List<Question> getAllQuestions() {
         return questionRepository.findAll();
     }
+
+    public int importSeedQuestionsIfMissing(List<QuestionCreateRequest> seedQuestions) {
+        int inserted = 0;
+        for (QuestionCreateRequest request : seedQuestions) {
+            if (questionRepository.existsByQuestionBody(request.questionBody())) {
+                continue;
+            }
+            createQuestion(request);
+            inserted++;
+        }
+        return inserted;
+    }
 }

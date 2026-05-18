@@ -131,5 +131,131 @@
     "difficulty" : "EASY",
     "requiredUsage" : null,
     "topic" : "OPERADORES_TIPOS_E_VARIAVEIS"
+  }, {
+    "questionBody" : "Testar se o quadrado de um número é maior do que ele multiplicado por 10;",
+    "type" : "PRACTICAL",
+    "difficulty" : "EASY",
+    "requiredUsage" : null,
+    "topic" : "EXECUCAO_CONDICIONAL"
+  }, {
+    "questionBody" : "Testar se um número é divisível por 3 e por 4 (tente fazer usando apenas if’s e else’s);",
+    "type" : "PRACTICAL",
+    "difficulty" : "MEDIUM",
+    "requiredUsage" : "FOR",
+    "topic" : "EXECUCAO_CONDICIONAL"
+  }, {
+    "questionBody" : "Testar se um número é divisível por 3 mas não por 4 (tente fazer usando apenas if’s e else’s);",
+    "type" : "PRACTICAL",
+    "difficulty" : "MEDIUM",
+    "requiredUsage" : "WHILE",
+    "topic" : "EXECUCAO_CONDICIONAL"
+  }, {
+    "questionBody" : "Testar se um número é divisível por 2 ou por 7 (tente fazer usando apenas if’s e else’s);",
+    "type" : "PRACTICAL",
+    "difficulty" : "MEDIUM",
+    "requiredUsage" : null,
+    "topic" : "EXECUCAO_CONDICIONAL"
+  }, {
+    "questionBody" : "Multiplicar dois números e verificar se o resultado é um número negativo;",
+    "type" : "PRACTICAL",
+    "difficulty" : "EASY",
+    "requiredUsage" : null,
+    "topic" : "EXECUCAO_CONDICIONAL"
+  }, {
+    "questionBody" : "Dividir dois números inteiros e verificar se o resultado é divisível por 10;",
+    "type" : "PRACTICAL",
+    "difficulty" : "EASY",
+    "requiredUsage" : "FOR",
+    "topic" : "EXECUCAO_CONDICIONAL"
+  }, {
+    "questionBody" : "Dividir a por b e verificar se o resultado é maior do que a;",
+    "type" : "PRACTICAL",
+    "difficulty" : "EASY",
+    "requiredUsage" : null,
+    "topic" : "EXECUCAO_CONDICIONAL"
+  }, {
+    "questionBody" : "Dado dois números, imprimir em ordem crescente;",
+    "type" : "PRACTICAL",
+    "difficulty" : "MEDIUM",
+    "requiredUsage" : null,
+    "topic" : "EXECUCAO_CONDICIONAL"
+  }, {
+    "questionBody" : "Dado dois números,  imprimir em ordem decrescente;",
+    "type" : "PRACTICAL",
+    "difficulty" : "MEDIUM",
+    "requiredUsage" : "FOR",
+    "topic" : "EXECUCAO_CONDICIONAL"
+  }, {
+    "questionBody" : "Elevar um número ao quadrado e informar se o resultado é maior do que 100.",
+    "type" : "PRACTICAL",
+    "difficulty" : "EASY",
+    "requiredUsage" : null,
+    "topic" : "EXECUCAO_CONDICIONAL"
+  }, {
+    "questionBody" : "Dados três números quaisquer, imprimi-los em ordem crescente;",
+    "type" : "PRACTICAL",
+    "difficulty" : "HARD",
+    "requiredUsage" : null,
+    "topic" : "EXECUCAO_CONDICIONAL"
+  }, {
+    "questionBody" : "Dados três números quaisquer, imprimi-los em ordem decrescente;",
+    "type" : "PRACTICAL",
+    "difficulty" : "HARD",
+    "requiredUsage" : "FOR",
+    "topic" : "EXECUCAO_CONDICIONAL"
+  }, {
+    "questionBody" : "Dados quatro notas, computar e classificar o valor da média das notas de um  estudante como aprovado (> 6), reprovado (< 4) e recuperação (caso contrário);",
+    "type" : "PRACTICAL",
+    "difficulty" : "HARD",
+    "requiredUsage" : null,
+    "topic" : "EXECUCAO_CONDICIONAL"
+  }, {
+    "questionBody" : "Dada a temperatura, classificá-la como fria (< 15), quente (> 30) e normal (caso contrário);",
+    "type" : "PRACTICAL",
+    "difficulty" : "HARD",
+    "requiredUsage" : null,
+    "topic" : "EXECUCAO_CONDICIONAL"
+  }, {
+    "questionBody" : "Computar o Índice de Massa Corporal (peso dividido pelo quadrado da altura) e classificar o resultado entre magreza (inferior a 18.5), saudável (entre 18.5 e 25), sobrepeso (acima de 25);",
+    "type" : "PRACTICAL",
+    "difficulty" : "HARD",
+    "requiredUsage" : null,
+    "topic" : "EXECUCAO_CONDICIONAL"
+  }, {
+    "questionBody" : "Dado o dia da semana, imprime as aulas que os estudantes do primeiro semestre terão no dia;",
+    "type" : "PRACTICAL",
+    "difficulty" : "HARD",
+    "requiredUsage" : null,
+    "topic" : "EXECUCAO_CONDICIONAL"
+  }, {
+    "questionBody" : "Converter o dia da semana (string) em um valor numérico (“domingo” -> 0, “segunda” -> 1, etc.);",
+    "type" : "PRACTICAL",
+    "difficulty" : "HARD",
+    "requiredUsage" : null,
+    "topic" : "OPERADORES_TIPOS_E_VARIAVEIS"
+  }, {
+    "questionBody" : "Converter texto em um número inteiro (“um” -> 1, “dois” -> 2, até o número “cinco”);",
+    "type" : "PRACTICAL",
+    "difficulty" : "HARD",
+    "requiredUsage" : null,
+    "topic" : "OPERADORES_TIPOS_E_VARIAVEIS"
+  }, {
+    "questionBody" : "Traduzir os pronomes (I, you, he, she, it, we e they) do Inglês para o Português;",
+    "type" : "PRACTICAL",
+    "difficulty" : "HARD",
+    "requiredUsage" : null,
+    "topic" : "OPERADORES_TIPOS_E_VARIAVEIS"
+  }, {
+    "questionBody" : "Dado o nome de um dos integrantes da sua sala, imprimir o sobrenome da pessoa (ao menos 3 pessoas).",
+    "type" : "PRACTICAL",
+    "difficulty" : "HARD",
+    "requiredUsage" : null,
+    "topic" : "OPERADORES_TIPOS_E_VARIAVEIS"
+  }, {
+    "questionBody" : "Corrigir todos os erros do programa e para cada erro encontrado faça um comentário explicando qual o erro e qual foi a solução encontrada: corrigir variáveis, imprimir resultados, etc.",
+    "type" : "MULTIPLE_CHOICE",
+    "difficulty" : "HARD",
+    "requiredUsage" : null,
+    "topic" : "LACOS"
   } ]
 }

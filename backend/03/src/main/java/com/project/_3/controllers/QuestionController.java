@@ -8,6 +8,7 @@ import com.project._3.services.QuestionService;
 import com.project._3.services.QuestionSeedImportService;
 import jakarta.validation.Valid;
 import org.springframework.http.HttpStatus;
+import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -19,6 +20,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.multipart.MultipartFile;
 
 import java.util.List;
 
@@ -70,6 +73,13 @@ public class QuestionController {
     @PreAuthorize("hasAuthority('ADMIN')")
     public ResponseEntity<QuestionSeedImportResponse> importSeed(@Valid @RequestBody QuestionSeedImportRequest request) {
         QuestionSeedImportResponse response = questionSeedImportService.importFromResource(request.fileName());
+        return ResponseEntity.status(HttpStatus.CREATED).body(response);
+    }
+
+    @PostMapping(value = "/import-upload", consumes = MediaType.MULTIPART_FORM_DATA_VALUE)
+    @PreAuthorize("hasAuthority('ADMIN')")
+    public ResponseEntity<QuestionSeedImportResponse> importUploadedFile(@RequestParam("file") MultipartFile file) {
+        QuestionSeedImportResponse response = questionSeedImportService.importFromUploadedFile(file);
         return ResponseEntity.status(HttpStatus.CREATED).body(response);
     }
 }
